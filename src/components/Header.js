@@ -9,7 +9,9 @@ const Header = () => {
                     <h1>My News</h1>
                 </div>
 
-                <SearchInput />
+                <div className=" h-100 w-50 align-self-center">
+                    <SearchInput />
+                </div>
             </div>
         </header>
     );
