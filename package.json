@@ -9,7 +9,6 @@
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
     "bootstrap": "^5.0.0",
-    "http-proxy-middleware": "^2.0.1",
     "koa": "^2.13.1",
     "koa-bodyparser": "^4.3.0",
     "koa-cors": "^0.0.16",
