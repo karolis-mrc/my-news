@@ -7,3 +7,7 @@ export const getNews = async (query) => {
 
   return results;
 };
+
+export const postKeywords = keyword => axios.post(`/keywords`, {keyword}).catch(console.log)
+
+export const postArticles = article => axios.post(`/articles`, {article}).catch(console.log)

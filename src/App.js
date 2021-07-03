@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { getNews } from './services/gnApi';
 import Header from './components/Header';
+import Card from './components/Card';
 
 function App() {
   const [news, setNews] = useState([]);
@@ -8,7 +9,7 @@ function App() {
 
   useEffect(() => {
     if (!!query) {
-      getNews(query).then(data => data && setNews(data.articles));
+      getNews(query).then((data) => data && setNews(data.articles));
     }
   }, [query]);
 
@@ -18,7 +19,7 @@ function App() {
 
   return (
     <Fragment>
-      <Header getQuery={getQuery}/>
+      <Header getQuery={getQuery} />
 
       <section>
         <div className='main-content'>
@@ -28,28 +29,7 @@ function App() {
                 news.slice(0, 9).map((article, key) => {
                   return (
                     <div key={key} className='col-xl-4 col-lg-4 col-md-6 col-sm-12 mb-5'>
-                      <div className='card h-100 shadow'>
-                        <a href={article.url} target='_blank' rel='noopener noreferrer'>
-                          <div className='img object-fit overflow-hidden'>
-                            <div className='object-fit-cover'>
-                              <img className='card-img-top' src={article.image} alt={article.title} />
-                            </div>
-                          </div>
-
-                          <div className='card-body'>
-                            <div className='meta'>
-                              <p>
-                                <span>Published at : </span>
-                                <span>{article.publishedAt.replace('T', ' ').replace('Z', '')}</span>
-                              </p>
-                            </div>
-
-                            <h5 className='card-title pb-3'>{article.title}</h5>
-
-                            <p className='card-text'>{article.description}</p>
-                          </div>
-                        </a>
-                      </div>
+                      <Card article={article} />
                     </div>
                   );
                 })}

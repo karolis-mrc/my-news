@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { postKeywords } from '../services/gnApi';
 
-const SearchInput = getQuery => {
+const SearchInput = ({getQuery}) => {
   const [query, setQuery] = useState('');
 
   const handleSubmit = (e) => {
@@ -10,7 +11,8 @@ const SearchInput = getQuery => {
       callAlert('emptyInput');
       return false;
     } else {
-        getQuery.getQuery.getQuery(query);
+        getQuery(query);
+        postKeywords(query);
         setQuery('');
     }
   };
@@ -82,6 +84,6 @@ const SearchInput = getQuery => {
       </div>
     </form>
   );
-};
+}
 
 export default SearchInput;

@@ -1,7 +1,7 @@
 import React from 'react';
 import SearchInput from './SearchInput';
 
-const Header = getQuery => {
+const Header = ({getQuery}) => {
   return (
     <header>
       <div className='container d-flex justify-content-between'>
@@ -15,6 +15,6 @@ const Header = getQuery => {
       </div>
     </header>
   );
-};
+}
 
 export default Header;
