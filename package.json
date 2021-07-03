@@ -23,7 +23,7 @@
   },
   "scripts": {
     "start-client": "react-scripts start",
-    "build": "react-scripts build && (cd server && yarn install)",
+    "build": "react-scripts build && (node server.js && yarn install)",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "start": "node server.js && yarn start"
