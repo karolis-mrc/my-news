@@ -1,17 +1,21 @@
 const Koa = require('koa');
 const Router = require('koa-router');
+const stat = require('koa-static');
+const path = require('path');
 const bodyParser = require('koa-bodyparser');
-const cors = require('@koa/cors');
 const keywords = require('./keywords');
 const articles = require('./articles');
 
 const app = new Koa();
-app.use(cors());
-app.use(bodyParser());
 const router = new Router();
+
+app.use(bodyParser());
+app.use(stat(path.resolve(__dirname, '../../build')));
+app.use(router.routes())
 
 router.post('/keywords', async (ctx) => {
   const keyword = ctx.request.body && ctx.request.body.keyword;
+  console.log(ctx.request.body);
   keywords.log(keyword);
   ctx.response.status = 204;
 });
