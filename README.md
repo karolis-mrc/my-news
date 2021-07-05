@@ -4,13 +4,13 @@ My News App is a simple application that gives you up to 9 articles by your sear
 
 My News App is also deployed in Heroku cloud, you can find it here: [My News App](https://karolis-news-app.herokuapp.com/).
 
-##### How to run the app
+### How to run the app
 
 * Install Node v14.16.1 or higher.
 * Type `yarn install` in the terminal to install node modules.
 * Type `yarn dev` to run project on local machine.
 
-##### How to use the app
+### How to use the app
 
 * App will run on http://localhost:5000. Open this adress on your browser.
 * On first load you will find empty page with header, where in the right side you will find text input field. Write keywords for the news you would like to find and click **Find** button.
