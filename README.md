@@ -1,6 +1,6 @@
 # My News App
 
-My News App is a simple application that gives you up to 9 articles by your search request. It fetches articles from [https://gnews.io] api and displays the image, date and time of publication, title and description of the article. This app also logs search keywords together with details ( title and origin url ) of the clicked article.
+My News App is a simple application that gives you up to 9 articles by your search request. It fetches articles from [gnews api](https://gnews.io) and displays the image, date and time of publication, title and description of the article. This app also logs search keywords together with details ( title and origin url ) of the clicked article.
 
 My News App is also deployed in Heroku cloud, you can find it here: [My News App](https://karolis-news-app.herokuapp.com/).
 
