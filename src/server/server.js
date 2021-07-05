@@ -3,6 +3,7 @@ const Router = require('koa-router');
 const stat = require('koa-static');
 const path = require('path');
 const bodyParser = require('koa-bodyparser');
+const news = require('./news');
 const keywords = require('./keywords');
 const articles = require('./articles');
 
@@ -11,7 +12,13 @@ const router = new Router();
 
 app.use(bodyParser());
 app.use(stat(path.resolve(__dirname, '../../build')));
-app.use(router.routes())
+app.use(router.routes());
+
+router.get('/getNews', async (ctx) => {
+  const query = ctx.request.query.q;
+  const result = await news.getNews(query);
+  ctx.body = result;
+});
 
 router.post('/keywords', async (ctx) => {
   const keyword = ctx.request.body && ctx.request.body.keyword;

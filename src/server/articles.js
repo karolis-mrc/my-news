@@ -1,4 +1,4 @@
-const {storeArticle} = require('./database');
+const { storeArticle } = require('./database');
 
 const log = (item) => {
   const { title, url } = item;

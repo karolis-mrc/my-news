@@ -26,6 +26,6 @@ const Card = ({ article }) => {
       </a>
     </div>
   );
-}
+};
 
 export default Card;

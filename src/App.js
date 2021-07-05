@@ -8,8 +8,8 @@ function App() {
   const [query, setQuery] = useState('');
 
   useEffect(() => {
-    if (!!query) {
-      getNews(query).then((data) => data && setNews(data.articles));
+    if (query) {
+      getNews(query).then(({ data }) => data && setNews(data.articles));
     }
   }, [query]);
 
